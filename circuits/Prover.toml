@@ -1,0 +1,6 @@
+merkle_root = "0x01d3465393c42331e125582f6cf5a95d7c2c115da91b985dba0dc43bbaf4875d"
+riddle_commitment = "0x13f8865c30093ba0bc9114e0d1f9aec79f2522a4254d1af5b861897a5604bb21"
+player_address = "0x1751a557Cdc4D116107fe2f5741F3686b03ddE3b"
+riddle_secret = "0x68616c6c6f7765656e"
+merkle_proof = ["0x07ea1d0a08ec265e658b049cce881d5466e599440485047935d2a251a2c4931a"]
+merkle_index = "0"
