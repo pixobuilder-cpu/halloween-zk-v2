@@ -1,66 +1,11 @@
-## Foundry
+# 🎃 Halloween ZK Lab — UltraHonk, Pedersen Merkle Tree & ERC20
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+A modular Zero-Knowledge decentralized application deployed on **Ethereum Sepolia**. This project proves both **allowlist membership** (via a Pedersen Merkle Tree) and **secret riddle knowledge** without exposing private inputs on-chain, rewarding valid proofs with ERC20 tokens.
 
-Foundry consists of:
+## 📐 Modular Architecture (< 24 KB EIP-170 Compliant)
 
-- **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
-- **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
-- **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
-- **Chisel**: Fast, utilitarian, and verbose solidity REPL.
-
-## Documentation
-
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
-```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+| Contract | Sepolia Address | Role |
+| :--- | :--- | :--- |
+| **`HonkVerifier`** | `0x868B8d2C8E67a7F853B0BDc16cE2B41829BE677C` | On-chain UltraHonk cryptographic verifier generated via Noir & Barretenberg |
+| **`HalloweenGame`** | `0xB2f4429440Bf227B29CD386B18b412Dfc604CF5d` | Validates public inputs (`merkleRoot` & `riddleCommitment`), prevents replay attacks, and triggers rewards |
+| **`HalloweenToken`** | `0xb49FFfd94546cC47497Cb5f3d09982019CFe4eb4` | Restricted ERC20 (`HZK`) contract that mints `13 HZK` upon valid ZK proof verification |
